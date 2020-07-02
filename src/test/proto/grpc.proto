@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc";
+option java_outer_classname = "GrpcProto";
+
+package grpc;
+
+service GrpcService{
+  rpc SendMessage(Request) returns (Response) {}
+}
+
+message Request{
+  string rqUUID = 1;
+  string rqTm = 2;
+  string content = 3;
+}
+
+message Response{
+  string status = 1;
+}
